@@ -181,7 +181,9 @@ h1 em, h2 em { color: var(--lavender-deep); font-weight: 400; }
 .contact-copy h2 em { color: var(--lavender); }
 .contact-copy > p:not(.eyebrow) { color: rgba(255, 253, 251, .78); max-width: 440px; font-size: 17px; }
 .contact-details { display: flex; flex-direction: column; gap: 8px; margin-top: 34px; color: rgba(255, 253, 251, .85); font-size: 15px; }
-.contact-details span { display: flex; align-items: center; gap: 9px; }
+.contact-details span, .contact-details a { display: flex; align-items: center; gap: 9px; }
+.contact-details a { width: fit-content; border-bottom: 1px solid rgba(255, 253, 251, .3); padding-bottom: 2px; transition: color .2s ease, border-color .2s ease; }
+.contact-details a:hover { color: var(--lavender); border-color: var(--lavender); }
 .contact-form { background: rgba(255, 253, 251, .1); border: 1px solid rgba(255, 253, 251, .19); padding: 32px; backdrop-filter: blur(10px); }
 .contact-form label { display: block; color: rgba(255, 253, 251, .78); font-size: 12px; letter-spacing: .1em; text-transform: uppercase; margin-bottom: 22px; }
 .contact-form input, .contact-form textarea { display: block; width: 100%; border: 0; border-bottom: 1px solid rgba(255, 253, 251, .3); padding: 10px 0; color: var(--warm-white); background: transparent; outline: none; font-size: 16px; resize: vertical; }
