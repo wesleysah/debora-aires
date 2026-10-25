@@ -353,8 +353,17 @@ h1 em, h2 em { color: var(--lavender-deep); font-weight: 400; }
 .about-photo { margin: 40px 0 0; max-width: 290px; aspect-ratio: 4 / 5; border-radius: 72px 20px 72px 20px; overflow: hidden; background: var(--lilac-wash); }
 .about-photo img { object-position: 50% 25%; }
 /* Sobre: foto com legenda à esquerda, título e texto num bloco só à direita. */
-.about-layout { grid-template-columns: minmax(280px, 440px) minmax(0, 1fr); gap: clamp(48px, 8vw, 128px); align-items: center; }
+.about-layout { align-items: center; }
 .about-media { margin: 0; }
+
+/* Faixa de introdução e Sobre dividem a mesma grade: o texto do Sobre começa
+   na mesma linha que "Há caminhos que começam…". */
+:root { --about-col: clamp(300px, 34vw, 440px); --about-gap: clamp(48px, 7vw, 112px); --strip-pad: clamp(24px, 4vw, 48px); }
+@media (min-width: 901px) {
+  .about-layout { grid-template-columns: var(--about-col) minmax(0, 1fr); gap: var(--about-gap); }
+  .intro-strip { display: grid; grid-template-columns: calc(var(--about-col) - var(--strip-pad) - 1px) minmax(0, 1fr) auto; column-gap: var(--about-gap); padding-left: var(--strip-pad); padding-right: var(--strip-pad); }
+  .intro-strip .strip-mark { justify-self: end; margin-left: 0; }
+}
 .about-media .about-photo { margin: 0; max-width: none; }
 .about-media .about-footnote { margin-top: 20px; }
 .about-copy { padding-top: 0; max-width: 580px; }
