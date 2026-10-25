@@ -35,6 +35,7 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 button, input, textarea { font: inherit; }
+img { max-width: 100%; height: auto; }
 button, a { -webkit-tap-highlight-color: transparent; }
 a { color: inherit; text-decoration: none; }
 button { border: 0; }
@@ -345,13 +346,14 @@ h1 em, h2 em { color: var(--lavender-deep); font-weight: 400; }
 /* Versão estática: logos oficiais em SVG e estados que antes eram do React. */
 .brand img { object-fit: contain; object-position: left center; transform: none; mix-blend-mode: normal; }
 /* Fotos da Débora: arco no hero, curva assimétrica no Sobre (mesma linguagem dos cartões). */
-.hero-visual { min-height: 560px; }
-.hero-photo { position: relative; z-index: 1; margin: 0; width: min(400px, 80%); aspect-ratio: 4 / 5; border-radius: 200px 200px 28px 28px; overflow: hidden; background: var(--lilac-wash); box-shadow: 0 30px 60px rgba(47, 27, 64, .14); }
+.hero-visual { min-height: 480px; }
+.hero-photo { position: relative; z-index: 1; margin: 0; width: min(330px, 72%); aspect-ratio: 4 / 5; border-radius: 165px 165px 24px 24px; overflow: hidden; background: var(--lilac-wash); box-shadow: 0 30px 60px rgba(47, 27, 64, .14); }
 .hero-photo img, .about-photo img { display: block; width: 100%; height: 100%; object-fit: cover; }
 .hero-photo img { object-position: 50% 20%; }
-.about-photo { margin: 48px 0 0; max-width: 400px; aspect-ratio: 4 / 5; border-radius: 90px 24px 90px 24px; overflow: hidden; background: var(--lilac-wash); }
+.about-photo { margin: 40px 0 0; max-width: 290px; aspect-ratio: 4 / 5; border-radius: 72px 20px 72px 20px; overflow: hidden; background: var(--lilac-wash); }
 .about-photo img { object-position: 50% 25%; }
 .about-layout { align-items: center; }
+.online-card > p, .online-card ul { color: #46375a; }
 .footer-logo { display: block; width: 200px; height: auto; }
 .mobile-nav[hidden], svg[hidden] { display: none; }
 
@@ -366,11 +368,11 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 .contact-section :focus-visible, .site-footer :focus-visible { outline-color: var(--lavender); }
 
 @media (max-width: 620px) {
-  .hero-visual { min-height: 420px; }
+  .hero-visual { min-height: 360px; }
   .hero-caption { display: none; }
   .intro-strip p { padding-right: 36px; }
-  .hero-photo { width: min(300px, 82%); border-radius: 150px 150px 22px 22px; }
-  .about-photo { margin-top: 36px; border-radius: 60px 18px 60px 18px; }
+  .hero-photo { width: min(250px, 70%); border-radius: 125px 125px 20px 20px; }
+  .about-photo { margin-top: 32px; max-width: 240px; border-radius: 56px 16px 56px 16px; }
   .eyebrow { font-size: 11px; letter-spacing: .12em; }
   .footer-logo { width: 180px; }
 }
