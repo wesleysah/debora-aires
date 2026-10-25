@@ -185,7 +185,7 @@ h1 em, h2 em { color: var(--lavender-deep); font-weight: 400; }
 .contact-form { background: rgba(255, 253, 251, .1); border: 1px solid rgba(255, 253, 251, .19); padding: 32px; backdrop-filter: blur(10px); }
 .contact-form label { display: block; color: rgba(255, 253, 251, .78); font-size: 12px; letter-spacing: .1em; text-transform: uppercase; margin-bottom: 22px; }
 .contact-form input, .contact-form textarea { display: block; width: 100%; border: 0; border-bottom: 1px solid rgba(255, 253, 251, .3); padding: 10px 0; color: var(--warm-white); background: transparent; outline: none; font-size: 16px; resize: vertical; }
-.contact-form input::placeholder, .contact-form textarea::placeholder { color: rgba(255, 253, 251, .46); }
+.contact-form input::placeholder, .contact-form textarea::placeholder { color: rgba(255, 253, 251, .72); }
 .contact-form input:focus, .contact-form textarea:focus { border-color: var(--lavender); }
 .light-button { background: var(--warm-white); color: var(--ink); padding: 16px 22px; font-size: 15px; margin-top: 3px; }
 .light-button:hover { background: var(--lavender); transform: translateY(-2px); }
