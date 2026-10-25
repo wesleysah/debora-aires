@@ -380,6 +380,23 @@ h1 em, h2 em { color: var(--lavender-deep); font-weight: 400; }
   .about-media { max-width: 400px; }
 }
 .online-card > p, .online-card ul { color: #46375a; }
+
+/* Botão flutuante do WhatsApp: só em telas de celular e tablet. */
+.whatsapp-float { display: none; }
+@media (max-width: 900px) {
+  .whatsapp-float {
+    position: fixed; z-index: 50;
+    right: calc(16px + env(safe-area-inset-right));
+    bottom: calc(16px + env(safe-area-inset-bottom));
+    width: 58px; height: 58px; border-radius: 50%;
+    display: grid; place-items: center;
+    background: var(--lavender); color: var(--lavender-deep);
+    border: 1px solid rgba(255, 255, 255, .6);
+    box-shadow: 0 10px 28px rgba(47, 27, 64, .22);
+    transition: transform .16s ease-out;
+  }
+  .whatsapp-float:active { transform: scale(.94); }
+}
 .footer-logo { display: block; width: 200px; height: auto; }
 .mobile-nav[hidden], svg[hidden] { display: none; }
 
