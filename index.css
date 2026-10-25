@@ -51,7 +51,7 @@ button { border: 0; }
   inset: 0 0 auto;
   z-index: 10;
 }
-.brand { width: 220px; height: 52px; display: flex; align-items: center; overflow: hidden; }
+.brand { width: 180px; height: 43px; display: flex; align-items: center; overflow: hidden; }
 .brand img { width: 100%; height: 100%; object-fit: cover; object-position: center; mix-blend-mode: multiply; transform: scale(1.08); }
 .desktop-nav { display: flex; align-items: center; gap: clamp(22px, 3vw, 45px); margin-left: auto; margin-right: clamp(24px, 4vw, 58px); }
 .desktop-nav a { color: var(--ink-soft); font-size: 14px; letter-spacing: .04em; transition: color .25s ease; }
@@ -352,7 +352,19 @@ h1 em, h2 em { color: var(--lavender-deep); font-weight: 400; }
 .hero-photo img { object-position: 50% 20%; }
 .about-photo { margin: 40px 0 0; max-width: 290px; aspect-ratio: 4 / 5; border-radius: 72px 20px 72px 20px; overflow: hidden; background: var(--lilac-wash); }
 .about-photo img { object-position: 50% 25%; }
-.about-layout { align-items: center; }
+/* Sobre: foto com legenda à esquerda, título e texto num bloco só à direita. */
+.about-layout { grid-template-columns: minmax(280px, 440px) minmax(0, 1fr); gap: clamp(48px, 8vw, 128px); align-items: center; }
+.about-media { margin: 0; }
+.about-media .about-photo { margin: 0; max-width: none; }
+.about-media .about-footnote { margin-top: 20px; }
+.about-copy { padding-top: 0; max-width: 580px; }
+.about-copy .about-heading { margin-bottom: 32px; color: var(--ink); }
+.about-copy .lead-copy { font-size: 24px; }
+
+@media (max-width: 900px) {
+  .about-layout { grid-template-columns: 1fr; gap: 40px; }
+  .about-media { max-width: 400px; }
+}
 .online-card > p, .online-card ul { color: #46375a; }
 .footer-logo { display: block; width: 200px; height: auto; }
 .mobile-nav[hidden], svg[hidden] { display: none; }
@@ -372,7 +384,10 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   .hero-caption { display: none; }
   .intro-strip p { padding-right: 36px; }
   .hero-photo { width: min(250px, 70%); border-radius: 125px 125px 20px 20px; }
-  .about-photo { margin-top: 32px; max-width: 240px; border-radius: 56px 16px 56px 16px; }
+  .about-photo { border-radius: 56px 16px 56px 16px; }
+  .about-media { max-width: 340px; }
+  .brand { width: 150px; height: 36px; }
+  .about-copy .lead-copy { font-size: 21px; }
   .eyebrow { font-size: 11px; letter-spacing: .12em; }
   .footer-logo { width: 180px; }
 }
