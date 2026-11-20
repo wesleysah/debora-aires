@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#F0E9F0">
+<meta property="og:title" content="Baile de Formatura · Débora Aires">
+<meta property="og:description" content="Save the date: 24 de abril de 2027, 22h, Requinte Buffet, Mossoró-RN.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://whole-lightcoral-crab-68.hostingersite.com/">
+<meta property="og:image" content="https://whole-lightcoral-crab-68.hostingersite.com/img/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<title>Formatura Débora Aires</title>
+<style>
+/* VOICE  occasion: convite de formatura bem-humorado, carinhoso, nada luxuoso
+   IDEA   um envelope lacrado que vira um convite em 5 cartas, como o carrossel
+   PICTURE a Débora de beca em cada carta; envelope com lacre DA na abertura
+   COLOUR lilás do site (#F0E9F0) como chão, verde da beca como cor forte, marsala de apoio, roxo da marca no lacre
+   TYPE   Bodoni Moda (títulos e números) + Instrument Sans (texto)
+   LAYOUT só celular: coluna de até 480px, uma carta por tela, botão de confirmar fixo embaixo */
+@font-face{font-family:"Bodoni";src:url(fonts/BodoniModa.woff2) format("woff2");font-weight:400 900;font-style:normal;font-display:swap}
+@font-face{font-family:"Bodoni";src:url(fonts/BodoniModa-Italic.woff2) format("woff2");font-weight:400 900;font-style:italic;font-display:swap}
+@font-face{font-family:"Inst";src:url(fonts/InstrumentSans.woff2) format("woff2");font-weight:400 700;font-display:swap}
+:root{color-scheme:light;--lil:#F0E9F0;--lil2:#E5DAE5;--lil3:#D9CBD9;--verde:#1F6B3D;--verde2:#16502D;--mars:#7A2E3B;--roxo:#4D067F;--ink:#1A1A1A;--ink2:#4F4A50;--gut:clamp(18px,6vw,28px)}
+*{box-sizing:border-box;min-width:0;margin:0;padding:0}
+html{font-optical-sizing:none;font-variation-settings:"opsz" 11;-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{background:#D8CCD8;color:var(--ink);font:17px/1.5 "Inst",system-ui,sans-serif;overflow-x:clip;font-synthesis:none;-webkit-font-smoothing:antialiased}
+body.lock{overflow:hidden;height:100svh}
+img{max-width:100%;display:block}
+a{color:inherit}
+.app{max-width:480px;margin:0 auto;background:radial-gradient(ellipse 90% 50% at 50% 30%,#F7F2F7,rgba(247,242,247,0) 70%),linear-gradient(180deg,#F2EBF2,#E9E0E9);position:relative;overflow:hidden;box-shadow:0 0 60px rgba(77,6,127,.12)}
+.sec{position:relative;min-height:100svh;padding:0 var(--gut)}
+.disp{font-family:"Bodoni",Georgia,serif;font-weight:800;text-transform:uppercase;line-height:1;letter-spacing:-.005em;white-space:nowrap}
+.lab{font-size:13px;font-weight:600;letter-spacing:.12em;text-transform:uppercase}
+.v{color:var(--verde)}
+.it{font-family:"Bodoni",Georgia,serif;font-style:italic;font-weight:700}
+.tab{position:absolute;left:50%;transform:translateX(-50%);top:0;width:56px;height:72px;background:var(--verde);border-radius:0 0 28px 28px;display:grid;place-items:center;padding-top:8px;z-index:4}
+.tab img{height:38px}
+.caret::after{content:"";display:inline-block;width:2px;height:.9em;background:currentColor;margin-left:2px;vertical-align:-.1em;animation:blink .8s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+@keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.06)}}
+@keyframes ring{0%{box-shadow:0 0 0 0 rgba(31,107,61,.45)}100%{box-shadow:0 0 0 18px rgba(31,107,61,0)}}
+@keyframes bob{0%,100%{transform:translateY(0) rotate(4deg)}50%{transform:translateY(-8px) rotate(-2deg)}}
+@keyframes wob{0%,100%{transform:rotate(-5deg)}25%{transform:rotate(3deg)}75%{transform:rotate(-9deg)}}
+@keyframes shake{10%,90%{transform:translateX(-2px)}20%,80%{transform:translateX(4px)}30%,50%,70%{transform:translateX(-8px)}40%,60%{transform:translateX(8px)}}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes stamp{0%{opacity:0;transform:scale(2.2) rotate(-6deg)}60%{opacity:1;transform:scale(.94)}100%{opacity:1;transform:none}}
+@keyframes shine{0%{background-position:-160% 0}100%{background-position:260% 0}}
+@keyframes cue{0%,100%{transform:translateY(0);opacity:.9}50%{transform:translateY(7px);opacity:.5}}
+@keyframes peek{0%,100%{transform:translateY(0) rotate(0)}50%{transform:translateY(-10px) rotate(-3deg)}}
+
+/* reveal: só esconde quando o script roda */
+.js .sec:not(.on) .rv{opacity:0;transform:translateY(26px)}
+.rv{transition:opacity .7s ease,transform .7s cubic-bezier(.2,.8,.2,1);transition-delay:var(--d,0s)}
+
+/* ---------- ENVELOPE ---------- */
+#env{position:fixed;inset:0;z-index:50;display:grid;place-items:center;background:radial-gradient(ellipse 80% 60% at 50% 45%,#F8F3F8,#E6DCE6);transition:opacity .8s ease,transform .8s ease;padding:24px}
+#env.out{opacity:0;transform:scale(1.08);pointer-events:none}
+.env-in{display:flex;flex-direction:column;align-items:center;gap:22px;width:100%}
+.env-top{text-align:center;color:var(--ink2);font-size:15px;transition:opacity .35s ease}
+.hint{transition:opacity .35s ease}
+.env-top b{display:block;font-family:"Bodoni",Georgia,serif;font-style:italic;font-weight:700;font-size:26px;color:var(--ink);line-height:1.15;margin-top:2px;min-height:1.15em}
+.envelope{position:relative;width:min(84vw,360px);aspect-ratio:1.48;perspective:900px;cursor:pointer;-webkit-tap-highlight-color:transparent;animation:floaty 3.2s ease-in-out infinite}
+@keyframes floaty{0%,100%{transform:translateY(0) rotate(-1deg)}50%{transform:translateY(-8px) rotate(1deg)}}
+.envelope .back{position:absolute;inset:0;background:var(--verde2);border-radius:10px;box-shadow:0 22px 40px rgba(31,40,30,.28)}
+.envelope .letter{position:absolute;left:6%;right:6%;top:8%;height:86%;background:#FBF7FB;border-radius:6px;z-index:2;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;transition:transform 1s cubic-bezier(.2,.8,.2,1);box-shadow:0 4px 14px rgba(0,0,0,.12)}
+.envelope .letter small{font-size:12px;letter-spacing:.2em;font-weight:600;color:var(--verde)}
+.envelope .letter strong{font-family:"Bodoni",Georgia,serif;font-weight:800;font-size:clamp(22px,6.4vw,28px);line-height:1}
+.envelope .letter em{font-family:"Bodoni",Georgia,serif;font-weight:600;font-size:15px}
+.envelope .front{position:absolute;inset:0;z-index:3;border-radius:10px;background:linear-gradient(160deg,#2A7B4A,var(--verde));clip-path:polygon(0 0,50% 56%,100% 0,100% 100%,0 100%)}
+.envelope .front::after{content:"";position:absolute;inset:0;background:linear-gradient(20deg,rgba(0,0,0,.14),transparent 45%),linear-gradient(-20deg,rgba(0,0,0,.14),transparent 45%)}
+.envelope .flap{position:absolute;left:0;right:0;top:0;height:60%;z-index:4;transform-origin:top;transition:transform .7s cubic-bezier(.4,0,.2,1),z-index 0s .35s}
+.envelope .flap i{position:absolute;inset:0;background:linear-gradient(180deg,#24744A,#1B5E36);clip-path:polygon(0 0,100% 0,50% 100%);border-radius:10px 10px 0 0;filter:drop-shadow(0 3px 2px rgba(0,0,0,.2))}
+.envelope .para{position:absolute;left:0;right:0;bottom:12%;z-index:5;text-align:center;color:#F3EFE6;font-family:"Bodoni",Georgia,serif;font-style:italic;font-weight:600;font-size:clamp(17px,4.8vw,20px)}
+.seal{position:absolute;left:50%;top:60%;z-index:6;width:74px;height:74px;margin:-37px 0 0 -37px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#3A9A62,#1A5C34 55%,#0E3A20);border:2px solid rgba(255,255,255,.35);display:grid;place-items:center;box-shadow:0 3px 0 #0B2E19,0 6px 14px rgba(0,0,0,.35),inset 0 0 0 5px rgba(255,255,255,.08);animation:pulse 1.6s ease-in-out infinite,sring 1.6s ease-out infinite;transition:transform .45s,opacity .45s}
+@keyframes sring{0%{box-shadow:0 3px 0 #0B2E19,0 6px 14px rgba(0,0,0,.35),0 0 0 0 rgba(255,255,255,.55)}100%{box-shadow:0 3px 0 #0B2E19,0 6px 14px rgba(0,0,0,.35),0 0 0 22px rgba(255,255,255,0)}}
+.seal img{height:40px}
+.hint{font-size:15px;font-weight:600;color:var(--verde);animation:pulse 1.4s ease-in-out infinite;display:flex;align-items:center;gap:8px}
+.envelope.aberto{animation:none}
+.envelope.aberto .seal{transform:scale(1.4) rotate(25deg);opacity:0;animation:none}
+.envelope.aberto .flap{transform:rotateX(180deg);z-index:1}
+.envelope.aberto .letter{transform:translateY(-58%)}
+.envelope.aberto .para{opacity:0;transition:opacity .3s}
+
+/* ---------- SOM ---------- */
+#som{position:fixed;top:calc(12px + env(safe-area-inset-top));right:max(12px,calc(50vw - 240px + 12px));z-index:60;width:44px;height:44px;border-radius:50%;border:0;background:rgba(255,255,255,.82);display:grid;place-items:center;box-shadow:0 2px 10px rgba(0,0,0,.12);cursor:pointer}
+#som svg{width:22px;height:22px;stroke:var(--ink);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+#som .off{display:none}
+#som.mudo .on{display:none}
+#som.mudo .off{display:inline}
+
+/* ---------- 1 CAPA ---------- */
+.capa{display:flex;flex-direction:column;padding-top:calc(70px + env(safe-area-inset-top));min-height:max(100svh,640px)}
+.capa .nome{display:flex;align-items:baseline;justify-content:center;gap:10px;flex-wrap:wrap;position:relative;z-index:3}
+.capa .nome .it{font-size:22px;min-height:1.2em}
+.capa .nome i{width:1.5px;height:18px;background:var(--ink);opacity:.45;align-self:center}
+.capa .nome .lab{color:var(--verde)}
+.capa .titulo{text-align:center;margin-top:8px;position:relative;z-index:3}
+.capa .titulo span{display:block}
+.capa .foto{position:absolute;left:50%;bottom:0;height:min(76%,640px);transform:translateX(-50%);z-index:1;max-width:none}
+.capa .sombra{position:absolute;left:0;right:0;bottom:0;height:48%;z-index:2;background:linear-gradient(180deg,rgba(12,12,12,0),rgba(12,12,12,.72) 42%,rgba(12,12,12,.93))}
+.capa .base{position:absolute;left:var(--gut);right:var(--gut);bottom:calc(18px + env(safe-area-inset-bottom));z-index:3;color:#fff;text-align:center}
+.std{font-family:"Bodoni",Georgia,serif;font-weight:600;font-size:20px;letter-spacing:.22em;background:linear-gradient(100deg,#fff 40%,#C9E8D3 50%,#fff 60%) 0 0/250% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:shine 3.4s linear infinite}
+.info{display:grid;grid-template-columns:1fr 1.35fr 1fr;margin-top:12px}
+.info>div{display:flex;flex-direction:column;justify-content:center;align-items:center}
+.info>div+div{border-left:1.5px solid rgba(255,255,255,.7)}
+.info .big{font-family:"Bodoni",Georgia,serif;font-weight:700;font-size:30px;line-height:1}
+.info .sm{font-size:13px;font-weight:600;letter-spacing:.1em;margin-top:4px}
+.info .loc{font-size:14px;font-weight:700;letter-spacing:.06em;line-height:1.2;text-transform:uppercase}
+.info .loc small{display:block;font-size:13px;font-weight:500;letter-spacing:0;text-transform:none;opacity:.85}
+.cd{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;margin-top:16px}
+.cd div{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.22);border-radius:12px;padding:8px 0 6px}
+.cd b{display:block;font-family:"Bodoni",Georgia,serif;font-weight:700;font-size:26px;line-height:1.05;font-variant-numeric:tabular-nums}
+.cd b.tick{animation:tick .35s ease}
+@keyframes tick{0%{transform:translateY(-35%);opacity:0}100%{transform:none;opacity:1}}
+.cd small{font-size:13px;opacity:.8}
+.cd .seg{animation:pulse 1s ease-in-out infinite}
+.cue{display:block;margin:10px auto 0;width:24px;height:24px;animation:cue 1.4s ease-in-out infinite}
+
+/* ---------- 2 OPEN ---------- */
+.open{padding-top:24px;padding-bottom:40px;overflow:hidden}
+.circ{display:block;width:min(64vw,250px);margin:64px -6px 0 auto}
+.circ .spin{transform-origin:300px 300px;animation:spin 16s linear infinite}
+.open .pre{font-size:19px;font-weight:500;margin-top:-6px;min-height:1.5em}
+.open .stack{margin-top:4px;line-height:1.04}
+.open .stack span{display:block}
+.js .open:not(.on) .stack span{opacity:0}
+.open.on .stack span{animation:stamp .55s cubic-bezier(.2,.9,.3,1.2) both}
+.open.on .stack span:nth-child(2){animation-delay:.45s}
+.open.on .stack span:nth-child(3){animation-delay:.9s}
+.open .alegria{display:inline-block;animation:pulse 1.4s ease-in-out 2s infinite}
+.open .mid{display:grid;grid-template-columns:minmax(0,1fr) 34%;align-items:center;gap:8px;margin-top:20px}
+.open .apoio{font-size:18px;line-height:1.4}
+.gato{width:100%;margin-top:34px;animation:bob 1.8s ease-in-out infinite;cursor:pointer;-webkit-mask-image:linear-gradient(180deg,#000 80%,transparent)}
+.obr{margin-top:26px;position:relative;z-index:2}
+.obr h3{font-size:18px;font-weight:700;letter-spacing:.06em}
+.obr ol{list-style:none;margin-top:10px;display:grid;gap:10px}
+.obr li{display:grid;grid-template-columns:32px minmax(0,1fr);gap:10px;align-items:start;font-size:18px;line-height:1.3}
+.obr li svg{width:28px;height:28px}
+.obr li svg circle{fill:none;stroke:var(--verde);stroke-width:2.5}
+.obr li svg path{fill:none;stroke:var(--verde);stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:30;stroke-dashoffset:30;transition:stroke-dashoffset .4s ease;transition-delay:var(--d)}
+.obr li.ok svg path{stroke-dashoffset:0}
+.mot{display:flex;align-items:center;gap:8px;margin-top:16px;font-weight:700;font-size:18px}
+.mot span{display:inline-block;animation:arrow 1s ease-in-out infinite}
+@keyframes arrow{50%{transform:translateX(8px)}}
+.barbie{position:absolute;right:-10px;bottom:-14px;width:min(44vw,190px);z-index:1;cursor:pointer;transform-origin:bottom center;transition:transform .6s cubic-bezier(.2,.9,.3,1.3)}
+.js .open:not(.on) .barbie{transform:translateY(110%)}
+.open.on .barbie{animation:wob 2.6s ease-in-out 1.6s infinite}
+
+/* ---------- 3 DRESS ---------- */
+.dress{padding-top:96px;padding-bottom:60px;text-align:center;display:flex;flex-direction:column;justify-content:center}
+.dress .traje{font-size:20px;margin-top:10px;min-height:1.5em}
+.dress .traje b{font-weight:700}
+.dress .row{display:grid;grid-template-columns:minmax(0,1fr) 44%;gap:6px;align-items:end;margin-top:22px;text-align:left}
+.dress .cores p{font-size:18px;line-height:1.35}
+.bolas{display:flex;gap:16px;margin-top:16px}
+.bola{display:flex;flex-direction:column;align-items:center;gap:6px}
+.bola svg{width:64px;height:64px}
+.bola line{stroke:var(--lil);stroke-width:7;stroke-linecap:round;stroke-dasharray:80;stroke-dashoffset:80;transition:stroke-dashoffset .5s ease .5s}
+.dress.on .bola line{stroke-dashoffset:0}
+.bola span{font-size:13px;font-weight:700;letter-spacing:.1em}
+.ago{position:relative}
+.ago img{width:100%;transform-origin:bottom center}
+.ago .x{position:absolute;right:-2px;top:-4px;width:48px;height:48px;border-radius:50%;background:var(--ink);display:grid;place-items:center;box-shadow:0 4px 10px rgba(0,0,0,.2)}
+.ago .x svg{width:22px;height:22px;stroke:#fff;stroke-width:4;stroke-linecap:round}
+.dress.on .ago .x{animation:stamp .5s ease .9s both,pulse 1.6s ease-in-out 1.6s infinite}
+.ago.bad img{animation:shake .6s ease}
+.teste{margin-top:22px;background:rgba(255,255,255,.55);border:1px solid var(--lil3);border-radius:18px;padding:16px 8px}
+.teste h4{font-family:"Bodoni",Georgia,serif;font-weight:800;font-size:22px;text-transform:uppercase}
+.teste p{font-size:15px;color:var(--ink2)}
+.chips{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin-top:12px}
+.chips button{width:44px;height:44px;flex:none;border-radius:50%;border:3px solid #fff;box-shadow:0 0 0 1.5px var(--lil3);cursor:pointer;transition:transform .2s}
+.chips button:active{transform:scale(.9)}
+.chips button:focus-visible{outline:3px solid var(--roxo);outline-offset:2px}
+.res{margin-top:12px;font-weight:700;font-size:17px;min-height:1.5em}
+.res.bad{color:var(--mars);animation:shake .5s}
+.res.good{color:var(--verde);animation:pulse .5s}
+
+/* ---------- 4 VALOR ---------- */
+.valor{padding-top:96px;padding-bottom:30px}
+.valor .titulo{text-align:center}
+.valor .titulo span{display:block}
+.preco-box{margin-top:22px;text-align:center}
+.preco-box .l{font-size:18px}
+.preco{display:flex;justify-content:center;align-items:flex-start;font-family:"Bodoni",Georgia,serif;font-weight:800;color:var(--verde);line-height:1;margin-top:4px}
+.preco .rs{font-size:20px;margin:6px 4px 0 0}
+.preco .n{font-size:58px;letter-spacing:-.01em}
+.preco .c{font-size:24px;margin-top:6px}
+.valor.on .preco{animation:stamp .6s ease .3s both}
+.preco-box .lab{display:block;margin-top:6px}
+.tenso{font-size:17px;color:var(--ink2);margin-top:6px}
+.card{margin:26px auto 0;width:min(84%,310px);background:#fff;border-radius:18px;padding:16px 18px;box-shadow:0 12px 30px rgba(60,20,70,.14);transform:rotate(2.5deg);animation:cardp 1.8s ease-in-out infinite}
+@keyframes cardp{0%,100%{transform:rotate(2.5deg) scale(1);box-shadow:0 12px 30px rgba(60,20,70,.14)}50%{transform:rotate(2.5deg) scale(1.045);box-shadow:0 18px 40px rgba(122,46,59,.24)}}
+.card small{display:block;font-size:13px;color:#6b6b6b;font-weight:500}
+.card .s{font-size:28px;font-weight:700;font-variant-numeric:tabular-nums;white-space:nowrap}
+.card hr{border:0;border-top:1.5px solid #eee;margin:10px 0}
+.card .d{font-size:21px;font-weight:700;color:var(--mars);font-variant-numeric:tabular-nums;white-space:nowrap}
+.nota{display:flex;justify-content:center;gap:8px;margin-top:16px;text-align:left;font-size:16px;line-height:1.35;color:var(--ink2)}
+.nota svg{width:34px;flex:none;align-self:flex-start;margin-top:-4px}
+.pose{display:grid;grid-template-columns:52% minmax(0,1fr);align-items:end;margin:6px calc(var(--gut) * -1) 0;padding-right:var(--gut)}
+.pose img{width:100%}
+.pose .lado{padding-bottom:26px;display:flex;flex-direction:column;gap:20px}
+.herd{position:relative;font-family:"Bodoni",Georgia,serif;font-style:italic;font-weight:700;font-size:26px;line-height:1.05;transform:rotate(-6deg);clip-path:inset(0 100% 0 0);transition:clip-path 1.1s ease .6s}
+.valor.on .herd{clip-path:inset(0 0 0 0)}
+.herd svg{display:block;width:38px;margin-top:6px}
+.conf{background:var(--verde);color:#fff;border-radius:16px;padding:12px;text-align:right;animation:ring 1.8s ease-out infinite}
+.conf small{display:block;font-size:13px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;opacity:.9}
+.conf b{display:block;font-family:"Bodoni",Georgia,serif;font-weight:700;font-size:21px;line-height:1.1}
+.calango{position:relative;display:grid;grid-template-columns:minmax(0,1fr) 38%;align-items:end;gap:8px;margin-top:8px}
+.calango p{font-size:16px;font-weight:600;text-align:right;line-height:1.3;padding-bottom:30px}
+.calango img{width:100%;margin-bottom:-30px;cursor:pointer;animation:peek 2.4s ease-in-out infinite}
+
+/* ---------- 5 FINAL ---------- */
+.final{padding-top:96px;padding-bottom:0}
+.final .titulo{text-align:center}
+.final .titulo span{display:block}
+.trilha{display:block;width:100%;height:46px;margin-top:6px}
+.trilha path{fill:none;stroke:var(--verde);stroke-width:2.5;stroke-dasharray:6 7}
+.final .sub{text-align:center;margin-top:2px}
+.agenda{margin-top:22px;background:rgba(255,255,255,.6);border:1px solid var(--lil3);border-radius:20px;padding:18px}
+.agenda .g{display:grid;gap:14px}
+.agenda .lab{color:var(--verde)}
+.agenda .dt{font-family:"Bodoni",Georgia,serif;font-weight:700;font-size:28px;line-height:1.1;white-space:nowrap}
+.agenda .dt span{font-family:"Inst";font-weight:500;font-size:18px}
+.agenda .ex{font-family:"Bodoni",Georgia,serif;font-style:italic;font-weight:700;font-size:26px;line-height:1.12;min-height:1.15em}
+.agenda .end{margin-top:14px;font-size:16px;line-height:1.4;color:var(--ink2)}
+.agenda .end b{color:var(--ink)}
+.btns{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-top:14px}
+.btns a{min-height:48px;border-radius:12px;background:#fff;border:1.5px solid var(--lil3);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;font-size:13px;font-weight:700;text-decoration:none;color:var(--ink)}
+.btns svg{width:20px;height:20px;stroke:var(--verde);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.btns a:active{transform:scale(.96)}
+.rancor{font-size:19px;line-height:1.4;margin-top:26px}
+.rancor b{font-weight:700}
+.fim{display:grid;grid-template-columns:minmax(0,1fr) 45%;align-items:center;gap:6px;margin:14px calc(var(--gut) * -1) 0 0}
+.fim h4{font-family:"Bodoni",Georgia,serif;font-weight:800;font-size:19px;text-transform:uppercase;line-height:1.1}
+.fim p{font-size:16px;line-height:1.4;margin-top:8px}
+.fim .obs{font-size:14px;font-weight:600;color:var(--ink2);margin-top:16px;padding:10px 12px;border:1.5px dashed var(--verde);border-radius:12px;animation:pulse 2s ease-in-out infinite}
+.fim img{width:100%}
+.cta{display:flex;flex-direction:column;align-items:center;gap:6px;margin:0 calc(var(--gut) * -1);padding:24px var(--gut) calc(26px + env(safe-area-inset-bottom));background:var(--verde);color:#fff;text-align:center}
+.cta a{display:inline-flex;align-items:center;justify-content:center;gap:8px;width:auto;min-height:46px;padding:0 24px;border-radius:30px;background:#fff;color:var(--verde);font-weight:700;font-size:16px;text-decoration:none;animation:pulse 1.6s ease-in-out infinite}
+.cta a svg{width:19px;height:19px;fill:var(--verde)}
+.cta small{font-size:14px;opacity:.9}
+footer{margin:0 calc(var(--gut) * -1);padding:26px var(--gut) calc(110px + env(safe-area-inset-bottom));background:var(--verde2);text-align:center;color:#E9F2EC;font-size:13px}
+footer .logo{width:170px;margin:0 auto 8px;background:#F0E9F0;border-radius:14px;padding:4px 10px}
+
+/* ---------- barra fixa ---------- */
+#bar{position:fixed;left:50%;bottom:calc(14px + env(safe-area-inset-bottom));z-index:40;width:min(calc(100vw - 32px),448px);transform:translate(-50%,140%);transition:transform .5s cubic-bezier(.2,.9,.3,1.2)}
+#bar.show{transform:translate(-50%,0)}
+#bar a{display:flex;align-items:center;justify-content:center;gap:10px;min-height:54px;border-radius:30px;background:var(--verde);color:#fff;font-weight:700;font-size:17px;text-decoration:none;animation:ring 1.8s ease-out infinite}
+#bar a svg{width:20px;height:20px;fill:#fff}
+#confete{position:fixed;inset:0;z-index:55;pointer-events:none;width:100%;height:100%}
+
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition-duration:.01s!important;transition-delay:0s!important}}
+</style>
+</head>
+<body class="lock">
+<canvas id="confete"></canvas>
+<button id="som" type="button" aria-label="Ligar ou desligar o som">
+  <svg viewBox="0 0 24 24"><path d="M4 9v6h4l5 4V5L8 9H4z"/><path class="on" d="M16.5 8.5a5 5 0 0 1 0 7M19 6a8.5 8.5 0 0 1 0 12"/><path class="off" d="M17 9l5 6M22 9l-5 6"/></svg>
+</button>
+
+<!-- ENVELOPE -->
+<div id="env">
+  <div class="env-in">
+    <div class="env-top">Um convite especial<b id="paraNome">para você</b></div>
+    <div class="envelope" id="envelope" role="button" tabindex="0" aria-label="Abrir o convite">
+      <div class="back"></div>
+      <div class="letter"><small>SAVE THE DATE</small><strong>FORMATURA</strong><em>Débora Aires</em></div>
+      <div class="front"></div>
+      <div class="flap"><i></i></div>
+      <div class="para">Psicologia 2026.2</div>
+      <div class="seal"><img src="img/simbolo-branco.svg" alt=""></div>
+    </div>
+    <div class="hint">Toque no lacre para abrir</div>
+  </div>
+</div>
+
+<main class="app">
+
+  <!-- 1 CAPA -->
+  <section class="sec capa" id="capa">
+    <div class="nome"><span class="it type" data-t="Débora Aires">Débora Aires</span><i></i><span class="lab">Psicologia 2026.2</span></div>
+    <div class="disp titulo fit" data-w="1"><span>Baile de</span><span>formatura</span></div>
+    <img class="foto" src="img/beca.webp" alt="Débora de beca e capelo, sorrindo, com os braços cruzados">
+    <div class="sombra"></div>
+    <div class="base">
+      <div class="std">SAVE THE DATE</div>
+      <div class="info">
+        <div><span class="big">24.04</span><span class="sm">2027</span></div>
+        <div><span class="loc">Requinte Buffet<small>Mossoró-RN</small></span></div>
+        <div><span class="big">22H</span></div>
+      </div>
+      <div class="cd" aria-label="Contagem regressiva para o baile">
+        <div><b id="cdD">--</b><small>dias</small></div>
+        <div><b id="cdH">--</b><small>horas</small></div>
+        <div><b id="cdM">--</b><small>min</small></div>
+        <div class="seg"><b id="cdS">--</b><small>seg</small></div>
+      </div>
+      <svg class="cue" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+    </div>
+  </section>
+
+  <!-- 2 OPEN -->
+  <section class="sec open" id="open">
+    <div class="tab"><img src="img/simbolo-branco.svg" alt=""></div>
+    <svg class="circ" viewBox="110 80 420 400" aria-label="Débora comemorando, com o punho para cima saindo do círculo">
+      <defs>
+        <clipPath id="pop"><circle cx="300" cy="300" r="150"/><polygon points="150,50 576.7,50 576.7,283.3 400,283.3 400,220.8 150,220.8"/></clipPath>
+        <path id="volta" d="M 300,300 m -163,0 a 163,163 0 1,1 326,0 a 163,163 0 1,1 -326,0"/>
+      </defs>
+      <circle cx="300" cy="300" r="176" fill="#1F6B3D"/>
+      <circle cx="300" cy="300" r="150" fill="#E9E0E9"/>
+      <g class="spin"><text font-family="Inst" font-weight="700" font-size="21" letter-spacing="3" fill="#fff"><textPath href="#volta" textLength="1010" lengthAdjust="spacing">PODE COMEMORAR! • PODE COMEMORAR! • PODE COMEMORAR! •</textPath></text></g>
+      <image href="img/comemora.webp" x="150" y="50" width="426.7" height="639" clip-path="url(#pop)"/>
+    </svg>
+    <div class="pre type" data-t="Felizmente é">Felizmente é</div>
+    <div class="disp stack fit" data-w="1"><span>Open bar</span><span>Open food</span><span>Open <b class="v alegria">alegria</b></span></div>
+    <div class="mid">
+      <p class="apoio rv" style="--d:1.3s">Porque saco vazio<br>não para em pé.<br>E <b>formanda feliz</b><br>aproveita até o fim.</p>
+      <img class="gato rv" style="--d:1.5s" id="gato" src="img/gato.webp" alt="Gatinho comendo milho">
+    </div>
+    <div class="obr">
+      <h3 class="rv" style="--d:.2s">OBRIGATÓRIO:</h3>
+      <ol>
+        <li style="--d:.5s"><svg viewBox="0 0 28 28"><circle cx="14" cy="14" r="12"/><path d="M8 14.5l4 4 8-9"/></svg><span>Curtir muito</span></li>
+        <li style="--d:1.1s"><svg viewBox="0 0 28 28"><circle cx="14" cy="14" r="12"/><path d="M8 14.5l4 4 8-9"/></svg><span>Seguir a primeira regra</span></li>
+        <li style="--d:1.7s"><svg viewBox="0 0 28 28"><circle cx="14" cy="14" r="12"/><path d="M8 14.5l4 4 8-9"/></svg><span>Tirar foto com a formanda<br>antes da meia-noite</span></li>
+      </ol>
+      <div class="mot">Por motivos óbvios <span>&gt;&gt;&gt;</span></div>
+    </div>
+    <div style="height:92px"></div>
+    <img class="barbie" id="barbie" src="img/barbie.webp" alt="Boneca descabelada e borrada depois da festa">
+  </section>
+
+  <!-- 3 DRESS CODE -->
+  <section class="sec dress" id="dress">
+    <div class="tab"><img src="img/simbolo-branco.svg" alt=""></div>
+    <div class="disp fit rv" data-w=".86">Dress code</div>
+    <div class="traje rv" style="--d:.2s">Traje: <b class="type" data-t="esporte fino e gala">esporte fino e gala</b></div>
+    <div class="row">
+      <div class="cores rv" style="--d:.4s">
+        <p>Cores exclusivas<br>dos formandos.<br>Convidado não usa<br>nem de longe:</p>
+        <div class="bolas">
+          <div class="bola"><svg viewBox="0 0 64 64"><circle cx="32" cy="32" r="30" fill="#1F6B3D"/><line x1="12" y1="52" x2="52" y2="12"/></svg><span>VERDE</span></div>
+          <div class="bola"><svg viewBox="0 0 64 64"><circle cx="32" cy="32" r="30" fill="#7A2E3B"/><line x1="12" y1="52" x2="52" y2="12"/></svg><span>MARSALA</span></div>
+        </div>
+      </div>
+      <div class="ago rv" style="--d:.6s" id="ago">
+        <img src="img/agostinho.webp" alt="Homem de camisa florida e calça xadrez, o exemplo do que não vestir">
+        <div class="x"><svg viewBox="0 0 24 24"><path d="M5 5l14 14M19 5L5 19"/></svg></div>
+      </div>
+    </div>
+    <div class="teste rv" style="--d:.8s">
+      <h4>Teste seu look</h4>
+      <p>Toque na cor que você pretende usar</p>
+      <div class="chips" id="chips">
+        <button type="button" style="background:#2F5DA8" data-c="azul" aria-label="Azul"></button>
+        <button type="button" style="background:#E7A1B8" data-c="rosa" aria-label="Rosa"></button>
+        <button type="button" style="background:#1F6B3D" data-c="verde" data-x="1" aria-label="Verde"></button>
+        <button type="button" style="background:#C9A44C" data-c="dourado" aria-label="Dourado"></button>
+        <button type="button" style="background:#7A2E3B" data-c="marsala" data-x="1" aria-label="Marsala"></button>
+        <button type="button" style="background:#1A1A1A" data-c="preto" aria-label="Preto"></button>
+      </div>
+      <div class="res" id="res" aria-live="polite"></div>
+    </div>
+  </section>
+
+  <!-- 4 VALOR -->
+  <section class="sec valor" id="valor">
+    <div class="tab"><img src="img/simbolo-branco.svg" alt=""></div>
+    <div class="disp titulo fit rv" data-w=".92"><span>Sou <b class="v">guerreira</b></span><span>e não herdeira!</span></div>
+    <div class="preco-box rv" style="--d:.2s">
+      <div class="l">O valor do convite é</div>
+      <div class="preco"><span class="rs">R$</span><span class="n">250</span><span class="c">,00</span></div>
+      <span class="lab">1º lote</span>
+      <p class="tenso">(Tenso, eu sei! Mas vai valer cada centavo.)</p>
+    </div>
+    <div class="card rv" style="--d:.4s">
+      <small>Saldo disponível</small><div class="s" id="saldo">R$ 0,00</div>
+      <hr>
+      <small>Agendado até 24/abr</small><div class="d" id="agend">- R$ 955.317,27</div>
+    </div>
+    <div class="nota rv" style="--d:.6s"><svg viewBox="0 0 40 40" fill="none" stroke="#1A1A1A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 34C20 30 30 20 32 6"/><path d="M24 11l8-6 4 9"/></svg><span>Meu saldo até o fim<br>dessa formatura.<br>O preço de ser pobre<br>e ter bom gosto.</span></div>
+    <div class="pose">
+      <img class="rv" style="--d:.3s" src="img/beca.webp" alt="Débora de beca, braços cruzados" loading="lazy">
+      <div class="lado">
+        <div class="herd">Só a pose<br>de rica<svg viewBox="0 0 44 40" fill="none" stroke="#1A1A1A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M40 4C30 10 20 20 12 34"/><path d="M6 22l6 13 13-4"/></svg></div>
+        <div class="conf rv" style="--d:.8s"><small>Confirme até</small><b>Dezembro<br>de 2026</b></div>
+      </div>
+    </div>
+    <div class="calango">
+      <p class="rv" style="--d:.3s">Aos casais:<br>claro que seu calango<br>também está convidado!</p>
+      <img id="iguanas" src="img/iguanas.webp" alt="Casal de iguanas abraçadas" loading="lazy">
+    </div>
+  </section>
+
+  <!-- 5 FINAL -->
+  <section class="sec final" id="final">
+    <div class="tab"><img src="img/simbolo-branco.svg" alt=""></div>
+    <div class="disp titulo fit rv" data-w=".9"><span>05 anos de</span><span>caminhada</span></div>
+    <svg class="trilha" viewBox="0 0 340 46" preserveAspectRatio="none" aria-hidden="true">
+      <path id="trilha" d="M8 34 C 70 4, 120 44, 175 22 S 280 6, 330 26"/>
+      <g id="capelo"><path d="M-14 -2 L0 -9 L14 -2 L0 5 Z" fill="#1A1A1A"/><path d="M-8 1 v6 q8 5 16 0 v-6" fill="#1A1A1A"/><path d="M12 -2 v9" stroke="#1F6B3D" stroke-width="2.4"/>
+        <animateMotion id="anda" dur="3.2s" begin="indefinite" fill="freeze" rotate="0"><mpath href="#trilha"/></animateMotion></g>
+    </svg>
+    <div class="lab sub rv" style="--d:.3s">Até que enfim a formatura</div>
+    <div class="agenda rv" style="--d:.4s">
+      <div class="g">
+        <div><div class="lab">Baile de formatura</div><div class="dt">24/04/27 <span>· 22h</span></div></div>
+        <div><div class="lab">O convite é</div><div class="ex type" data-t="Exclusivo-único-especial">Exclusivo-único-especial</div></div>
+      </div>
+      <div class="end"><b>Requinte Buffet</b><br>Rua Dracon de Albuquerque, 113, Abolição, Mossoró-RN</div>
+      <div class="btns">
+        <a id="aMaps" href="https://www.google.com/maps/search/?api=1&amp;query=Requinte%20Buffet%2C%20Rua%20Dracon%20de%20Albuquerque%2C%20113%2C%20Aboli%C3%A7%C3%A3o%2C%20Mossor%C3%B3%20RN" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>Maps</a>
+        <a id="aWaze" href="https://waze.com/ul?q=Requinte%20Buffet%20Rua%20Dracon%20de%20Albuquerque%20113%20Mossor%C3%B3&amp;navigate=yes" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M5 17a8 8 0 1 1 14-5c0 3-2 5-5 5H9"/><circle cx="9" cy="19" r="1.6"/><circle cx="16" cy="19" r="1.6"/></svg>Waze</a>
+        <a id="aCal" href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=Baile%20de%20Formatura%20da%20D%C3%A9bora%20Aires&amp;dates=20270425T010000Z%2F20270425T070000Z&amp;location=Requinte%20Buffet%2C%20Rua%20Dracon%20de%20Albuquerque%2C%20113%2C%20Aboli%C3%A7%C3%A3o%2C%20Mossor%C3%B3-RN&amp;details=Traje%3A%20esporte%20fino%20e%20gala.%20Verde%20e%20marsala%20s%C3%A3o%20exclusivos%20dos%20formandos." target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="15" rx="2"/><path d="M4 10h16M9 3v4M15 3v4"/></svg>Agenda</a>
+      </div>
+    </div>
+    <p class="rancor rv" style="--d:.2s">Se não puder ir, tudo bem...<br>não guardo rancor. <b>Só não me peça<br>desconto na sessão depois!</b></p>
+    <div class="fim">
+      <div class="rv" style="--d:.3s">
+        <h4>Gostou do<br>save the date?</h4>
+        <p>Espero que sim, porque<br>também sou formada<br>em Publicidade!</p>
+        <p class="obs">OBS: a formanda está<br>aceitando presentes</p>
+      </div>
+      <img class="rv" style="--d:.5s" src="img/preto.webp" alt="Débora sorrindo, de blusa preta" loading="lazy">
+    </div>
+    <div class="cta" id="cta">
+      <a class="zap" href="#" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.2c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2.1 1-2.4c.3-.3.6-.3.8-.3h.6c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .5l-.4.6-.4.5c-.1.2-.3.3-.1.6.2.3.8 1.4 1.8 2.2 1.2 1.1 2.2 1.4 2.5 1.6.3.1.5.1.6-.1l.9-1c.2-.3.4-.2.6-.1l2 .9c.3.1.5.2.5.4.1.1.1.7-.1 1.4z"/></svg>Confirmar presença</a>
+      <small>Confirme até Dezembro de 2026</small>
+    </div>
+  </section>
+</main>
+
+<div id="bar"><a class="zap" href="#" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2z"/></svg>Confirmar presença</a></div>
+
+<script>
+{
+// ===== CONFIGURAÇÃO =====
+// Coloque o WhatsApp da Débora com DDI e DDD, só números (ex.: 5584999999999).
+// Vazio: o botão abre o WhatsApp para a pessoa escolher o contato.
+const WHATS = '';
+const ALVO = new Date('2027-04-24T22:00:00-03:00').getTime();
+
+document.documentElement.classList.add('js');
+const $ = s => document.querySelector(s), $$ = s => [...document.querySelectorAll(s)];
+const calmo = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+// ----- nome do convidado pelo link: ...#mariana-e-joao -----
+const minus = ['e','de','da','do','das','dos'];
+const nomeHash = decodeURIComponent((location.hash || '').slice(1)).replace(/[^a-zA-ZÀ-ÿ0-9-]/g, '');
+const convidado = nomeHash && !['capa','open','dress','valor','final'].includes(nomeHash)
+  ? nomeHash.split('-').filter(Boolean).map((w, i) => (i && minus.includes(w.toLowerCase())) ? w.toLowerCase() : w[0].toUpperCase() + w.slice(1).toLowerCase()).join(' ')
+  : '';
+
+// ----- links de confirmação -----
+const msg = 'Oi, Débora! Confirmo presença no seu baile de formatura (24/04/2027, 22h).' + (convidado ? ' Aqui é ' + convidado + '.' : '') + ' Vamos: ___ pessoa(s).';
+const zap = (WHATS ? 'https://wa.me/' + WHATS : 'https://wa.me/') + '?text=' + encodeURIComponent(msg);
+$$('a.zap').forEach(a => a.href = zap);
+
+// ===== SOM (sintetizado, sem arquivos) =====
+let ac = null, mudo = false;
+const som = $('#som');
+try { mudo = localStorage.getItem('dbr-mudo') === '1'; } catch (e) {}
+som.classList.toggle('mudo', mudo);
+som.addEventListener('click', () => {
+  mudo = !mudo; som.classList.toggle('mudo', mudo);
+  try { localStorage.setItem('dbr-mudo', mudo ? '1' : '0'); } catch (e) {}
+  if (!mudo) { liga(); sfx.ding(); }
+});
+function liga() {
+  try { if (!ac) ac = new (window.AudioContext || window.webkitAudioContext)(); if (ac.state === 'suspended') ac.resume(); } catch (e) { ac = null; }
+}
+function tom(f, dur, tipo = 'sine', g = .2, quando = 0, ate = null) {
+  if (!ac || mudo) return;
+  const t = ac.currentTime + quando, o = ac.createOscillator(), v = ac.createGain();
+  o.type = tipo; o.frequency.setValueAtTime(f, t);
+  if (ate) o.frequency.exponentialRampToValueAtTime(ate, t + dur);
+  v.gain.setValueAtTime(.0001, t); v.gain.exponentialRampToValueAtTime(g, t + .012); v.gain.exponentialRampToValueAtTime(.0001, t + dur);
+  o.connect(v).connect(ac.destination); o.start(t); o.stop(t + dur + .02);
+}
+function ruido(dur, freq = 1500, g = .2, quando = 0, tipo = 'bandpass', ate = null) {
+  if (!ac || mudo) return;
+  const t = ac.currentTime + quando, n = Math.floor(ac.sampleRate * dur), b = ac.createBuffer(1, n, ac.sampleRate), d = b.getChannelData(0);
+  for (let i = 0; i < n; i++) d[i] = (Math.random() * 2 - 1) * (1 - i / n);
+  const s = ac.createBufferSource(), f = ac.createBiquadFilter(), v = ac.createGain();
+  s.buffer = b; f.type = tipo; f.frequency.setValueAtTime(freq, t); if (ate) f.frequency.exponentialRampToValueAtTime(ate, t + dur);
+  v.gain.setValueAtTime(g, t); s.connect(f).connect(v).connect(ac.destination); s.start(t);
+}
+const sfx = {
+  crack() { ruido(.09, 2400, .5); ruido(.05, 900, .4, .05); tom(120, .18, 'sine', .35, 0, 45); },
+  papel() { ruido(.55, 500, .18, 0, 'bandpass', 3200); },
+  pop(q = 0) { tom(500 + Math.random() * 500, .07, 'sine', .14, q, 1100 + Math.random() * 400); },
+  festa() { for (let i = 0; i < 12; i++) sfx.pop(i * .045); [523, 659, 784, 1047].forEach((f, i) => tom(f, .5, 'triangle', .1, .15 + i * .09)); },
+  tecla() { ruido(.018, 3800, .05, 0, 'highpass'); },
+  carimbo() { tom(90, .2, 'sine', .45, 0, 40); ruido(.06, 700, .25, 0, 'lowpass'); },
+  check(q = 0) { tom(880, .09, 'triangle', .1, q); tom(1320, .16, 'triangle', .1, q + .07); },
+  ding() { tom(1318, .5, 'sine', .14); tom(1760, .4, 'sine', .08, .06); },
+  buzina() { tom(150, .38, 'sawtooth', .1); tom(156, .38, 'square', .05); },
+  moeda() { tom(1567, .05, 'square', .04); tom(2093, .09, 'square', .04, .045); },
+  trombone() { [392, 370, 349, 294].forEach((f, i) => tom(f, i === 3 ? .9 : .32, 'sawtooth', .07, i * .34, i === 3 ? 260 : f * .97)); },
+  boing() { tom(180, .35, 'sine', .25, 0, 620); tom(620, .2, 'sine', .12, .22, 300); },
+  nhac() { [0, .11, .22].forEach(q => ruido(.06, 2600, .22, q)); }
+};
+
+// ===== DIGITANDO =====
+function digita(el, vel = 55) {
+  const txt = el.dataset.t || el.textContent; el.textContent = ''; el.classList.add('caret');
+  return new Promise(ok => {
+    let i = 0;
+    const passo = () => {
+      el.textContent = txt.slice(0, ++i); if (txt[i - 1] !== ' ') sfx.tecla();
+      if (i < txt.length) setTimeout(passo, vel + Math.random() * 40); else setTimeout(() => { el.classList.remove('caret'); ok(); }, 600);
+    };
+    if (calmo) { el.textContent = txt; el.classList.remove('caret'); ok(); } else setTimeout(passo, 150);
+  });
+}
+$$('.type').forEach(el => { if (!calmo) el.textContent = ''; });
+
+// ===== AJUSTE DOS TÍTULOS À LARGURA =====
+function encaixa() {
+  $$('.fit').forEach(el => {
+    const pe = el.parentElement, cs = getComputedStyle(pe);
+    const box = (pe.clientWidth - parseFloat(cs.paddingLeft) - parseFloat(cs.paddingRight)) * (+el.dataset.w || 1);
+    el.style.fontSize = '100px'; el.style.width = 'max-content';
+    const w = el.getBoundingClientRect().width;
+    el.style.width = ''; el.style.fontSize = Math.min(100 * box / w, 120).toFixed(1) + 'px';
+  });
+}
+let rz; addEventListener('resize', () => { clearTimeout(rz); rz = setTimeout(encaixa, 120); });
+encaixa();
+if (document.fonts) Promise.all(['800 100px Bodoni', 'italic 700 20px Bodoni', '500 17px Inst'].map(f => document.fonts.load(f))).then(encaixa, encaixa).then(() => document.fonts.ready).then(encaixa);
+
+// ===== CONTAGEM REGRESSIVA =====
+const cd = { D: $('#cdD'), H: $('#cdH'), M: $('#cdM'), S: $('#cdS') };
+function conta() {
+  let r = Math.max(0, ALVO - Date.now()) / 1000;
+  const v = { D: Math.floor(r / 86400), H: Math.floor(r % 86400 / 3600), M: Math.floor(r % 3600 / 60), S: Math.floor(r % 60) };
+  for (const k in v) { const t = String(v[k]).padStart(2, '0'); if (cd[k].textContent !== t) { cd[k].textContent = t; cd[k].classList.remove('tick'); void cd[k].offsetWidth; cd[k].classList.add('tick'); } }
+}
+conta(); setInterval(conta, 1000);
+
+// ===== ENVELOPE =====
+const env = $('#env'), envelope = $('#envelope');
+if (convidado) $('#paraNome').textContent = 'para ' + convidado;
+let aberto = false;
+function abre() {
+  if (aberto) return; aberto = true; liga(); sfx.crack();
+  envelope.classList.add('aberto'); $('.hint').style.opacity = 0; $('.env-top').style.opacity = 0;
+  setTimeout(() => sfx.papel(), 250);
+  setTimeout(() => { env.classList.add('out'); document.body.classList.remove('lock'); confete(); sfx.festa(); }, calmo ? 200 : 1500);
+  setTimeout(() => { env.remove(); comecaCapa(); }, calmo ? 400 : 2300);
+}
+envelope.addEventListener('click', abre);
+envelope.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); abre(); } });
+
+// ===== CONFETE =====
+function confete() {
+  if (calmo) return;
+  const c = $('#confete'), x = c.getContext('2d'), dpr = Math.min(devicePixelRatio || 1, 2);
+  const W = c.width = innerWidth * dpr, H = c.height = innerHeight * dpr;
+  const cores = ['#1F6B3D', '#7A2E3B', '#C9A44C', '#FFFFFF', '#2A7B4A', '#E5DAE5'];
+  const p = Array.from({ length: 140 }, () => ({ x: W / 2, y: H * .45, vx: (Math.random() - .5) * 22 * dpr, vy: (-Math.random() * 20 - 6) * dpr, r: (4 + Math.random() * 6) * dpr, a: Math.random() * 6, va: (Math.random() - .5) * .4, c: cores[Math.random() * cores.length | 0] }));
+  let f = 0;
+  (function quadro() {
+    x.clearRect(0, 0, W, H);
+    p.forEach(q => { q.vy += .55 * dpr; q.vx *= .985; q.x += q.vx; q.y += q.vy; q.a += q.va; x.save(); x.translate(q.x, q.y); x.rotate(q.a); x.fillStyle = q.c; x.fillRect(-q.r, -q.r / 2, q.r * 2, q.r); x.restore(); });
+    if (++f < 170) requestAnimationFrame(quadro); else x.clearRect(0, 0, W, H);
+  })();
+}
+
+// ===== CENAS DE CADA SEÇÃO =====
+function comecaCapa() { digita($('#capa .type')); }
+const cenas = {
+  open(sec) {
+    digita($('#open .pre'), 60);
+    [0, 450, 900].forEach(t => setTimeout(sfx.carimbo, t + 150));
+    setTimeout(() => $$('.obr li').forEach((li, i) => setTimeout(() => { li.classList.add('ok'); sfx.check(); }, i * 600)), 1600);
+    setTimeout(sfx.boing, 1900);
+  },
+  dress() { setTimeout(() => digita($('#dress .type'), 50), 400); setTimeout(sfx.carimbo, 950); },
+  valor() {
+    const saldo = $('#saldo'), ag = $('#agend'), real = n => 'R$ ' + n.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+    const ini = 12480, fim = 955317.27, dur = 2400, t0 = performance.now(); let ult = 0;
+    if (calmo) return;
+    (function passo(t) {
+      const k = Math.min(1, (t - t0) / dur), e = 1 - (1 - k) ** 3;
+      saldo.textContent = real(ini * (1 - e)); ag.textContent = '- ' + real(fim * e);
+      if (t - ult > 110 && k < 1) { sfx.moeda(); ult = t; }
+      if (k < 1) requestAnimationFrame(passo); else { saldo.textContent = 'R$ 0,00'; setTimeout(sfx.trombone, 200); }
+    })(t0);
+  },
+  final() {
+    try { $('#anda').beginElement(); } catch (e) {}
+    setTimeout(() => digita($('#final .type'), 65), 700);
+  }
+};
+const vistos = new Set();
+const io = new IntersectionObserver(es => es.forEach(e => {
+  if (!e.isIntersecting) return;
+  const s = e.target; s.classList.add('on');
+  if (!vistos.has(s.id) && aberto) { vistos.add(s.id); cenas[s.id]?.(s); }
+}), { threshold: .28 });
+$$('.sec').forEach(s => io.observe(s));
+$('#capa').classList.add('on');
+
+// ===== INTERAÇÕES =====
+$('#gato').addEventListener('click', e => { liga(); sfx.nhac(); e.target.animate([{ transform: 'scale(1)' }, { transform: 'scale(1.15) rotate(-6deg)' }, { transform: 'scale(1)' }], { duration: 400 }); });
+$('#barbie').addEventListener('click', e => { liga(); sfx.boing(); e.target.animate([{ transform: 'rotate(0)' }, { transform: 'rotate(-14deg) translateY(-12px)' }, { transform: 'rotate(8deg)' }, { transform: 'rotate(0)' }], { duration: 600 }); });
+$('#iguanas').addEventListener('click', e => { liga(); sfx.boing(); e.target.animate([{ transform: 'translateY(0)' }, { transform: 'translateY(-26px)' }, { transform: 'translateY(0)' }], { duration: 500, easing: 'ease-out' }); });
+const res = $('#res'), ago = $('#ago');
+$$('#chips button').forEach(b => b.addEventListener('click', () => {
+  liga(); res.className = 'res';
+  void res.offsetWidth;
+  if (b.dataset.x) {
+    res.textContent = (b.dataset.c === 'verde' ? 'Verde' : 'Marsala') + ' não! Essa cor é dos formandos.'; res.classList.add('bad');
+    ago.classList.remove('bad'); void ago.offsetWidth; ago.classList.add('bad'); sfx.buzina();
+    try { navigator.vibrate && navigator.vibrate([90, 50, 90]); } catch (e) {}
+  } else {
+    res.textContent = 'Aprovado! Pode vir de ' + b.dataset.c + '.'; res.classList.add('good'); sfx.ding();
+  }
+}));
+$$('a.zap').forEach(a => a.addEventListener('click', () => { liga(); sfx.festa(); }));
+
+// ===== BARRA FIXA =====
+const bar = $('#bar'), cta = $('#cta'); let ctaVisivel = false;
+new IntersectionObserver(es => es.forEach(e => { ctaVisivel = e.isIntersecting; mostraBarra(); }), { threshold: .1 }).observe(cta);
+function mostraBarra() { bar.classList.toggle('show', aberto && scrollY > innerHeight * .6 && !ctaVisivel); }
+addEventListener('scroll', mostraBarra, { passive: true });
+}
+</script>
+</body>
+</html>
